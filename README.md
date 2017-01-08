@@ -20,7 +20,7 @@ PHP7でも動くはずですが未確認です。
 ## Install
 1. ソースをDLします。　`git clone https://github.com/namuyan/NEM-testnet-Faucet.git`
 
-2. Apacheのルートフォルダ以下に*main*ファイルを作成し  
+2. Apacheのルートフォルダ以下に*main*ファイルを作成し、  
 *distribute-file* 内の全ファイルをコピーします。
 
 3. *htdocs*と権限を一致させます。`chown -R daemon:daemon htdocs`
@@ -73,3 +73,7 @@ NEM-testnet-Faucet は [NEM-Api-Library](https://github.com/namuyan/NEM-Api-Libr
 
 [namuyan](http://namuyan.dip.jp)  
 Twitter @namuyan_mine
+
+DonationCPaddress： 1BvRTmPCe47vee2CyrLi9AGeSEcrR2ciM4  
+DonationNEMaddress： NAN7XFG52NL3V5AW3NTSYO77AVR6X5LYRJKXWKHY  
+DonationMonacoin： MSYTEF7t62b9sjXt3oN9JokSjnYkvtcPFx
