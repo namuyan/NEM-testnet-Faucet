@@ -1,0 +1,97 @@
+/*
+デフォ設定
+NEMの色メモ オレンジ#f7a800 水色#67b2e8 黄緑#00c4b3
+*/
+
+div#header_main {
+    background-color:#00E2CF;
+    margin: 30px;
+    font-size:9ex;
+}
+div#header_sub1 {
+    background-color:#00E2CF;
+    margin: 30px;
+    padding:10px;
+}
+div#header_sub2 {
+    background-color:#00E2CF;
+    margin: 30px;
+    padding:10px;
+}
+div#body_main {
+    background-color:#f7a800;
+    margin: 30px;
+    padding:10px;
+}
+div#body_sub1 {
+    background-color:#f7a800;
+    margin: 30px;
+    padding:10px;
+}
+div#body_sub2 {
+    background-color:#f7a800;
+    margin: 30px;
+    padding:10px;
+}
+div#foot_main1 {
+    background-color:#67b2e8;
+    margin: 30px;
+    padding:10px;
+}
+div#foot_main2 {
+    background-color:#67b2e8;
+    margin: 30px;
+    padding:10px;
+}
+div#foot_sub {
+    font-size: big;
+    background-color:#67b2e8;
+    margin: 30px;
+    padding:10px;
+    color:white;
+}
+em {
+    font-weight:bold;
+}
+em2 {
+    font-size:2em;
+}
+
+table.HistoryTable {
+    border:#1490E9 solid 5px;
+    border-collapse: collapse;
+    width:100%;
+}
+.HistoryTable tr {
+    border:#1490E9 solid 5px;
+}
+.HistoryTable th {
+    background-color: whitesmoke;
+    border: #1490E9 solid 5px;
+}
+.HistoryTable td {
+    white-space: nowrap;
+    background-color: white;
+    padding: 4px;
+    border: #1490E9 dotted 5px;
+}
+
+
+table.HistoryDepositTable {
+    border:#f57f00 solid 5px;
+    border-collapse: collapse;
+    width:100%;
+}
+.HistoryDepositTable tr {
+    border:#f57f00 solid 5px;
+}
+.HistoryDepositTable th {
+    background-color: whitesmoke;
+    border: #f57f00 solid 5px;
+}
+.HistoryDepositTable td {
+    white-space: nowrap;
+    background-color: white;
+    padding: 6px;
+    border: #f57f00 dotted 5px;
+}
