@@ -376,7 +376,6 @@ class Apostille {
         $nem -> amount = 0;
         $nem -> recipient = $this->recipient;
         $nem ->EstimateFee();
-        echo $nem->version_ver1;
         $tmp = $nem ->SendNEMver1();
         $reslt = $nem->analysis($tmp);
         $reslt['fee'] = $nem->fee;
