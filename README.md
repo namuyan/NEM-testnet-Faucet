@@ -8,6 +8,8 @@
 百聞は一見に如かず、以下のリンクに設置してありますので触ってみて下さい。  
 <http://namuyan.dip.jp/nem/main/index.php>
 
+I recomend [NEM-Api-Library](https://github.com/namuyan/NEM-Api-Library) ,it help you constract contents with PHP!
+
 ## Requirement
 ####作者の環境  
 * XAMPP (1.8.3 include PHP Ver 5.5.6 and Mysql Ver 14.14)  
@@ -35,7 +37,7 @@ PHP7でも動くはずですが未確認です。
 
 7. データベースを作成する。**パラメータは任意の文字列にする事、例ではconfig.phpのパラメータを使用**  
 １、root権限でログイン　`mysql -u root -p`  
-２、データベースを作成　`CREATE DATABASE nemdb SET utf8 COLLATE utf8_general_ci;`  
+２、データベースを作成　`CREATE DATABASE nemdb CHARACTER SET utf8 COLLATE utf8_general_ci;`  
 ３、ユーザー作成　`CREATE USER 'nember'@'localhost' IDENTIFIED BY 'obama';`  
 ４、ユーザーに作成したDBの権限を与える　`GRANT ALL PRIVILEGES ON nemdb.* TO 'nember'@'localhost';`  
 ５、mysqlよりログアウト　`exit`
