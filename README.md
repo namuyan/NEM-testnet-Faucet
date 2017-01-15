@@ -19,16 +19,22 @@ I recomend [NEM-Api-Library](https://github.com/namuyan/NEM-Api-Library) ,it hel
 PHP7でも動くはずですが未確認です。
 
 
-## Install
-1. ソースをDLします。　`git clone https://github.com/namuyan/NEM-testnet-Faucet.git`
+## Install (in Japanese)
+1. ソースをDLします。　`git clone https://github.com/namuyan/NEM-testnet-Faucet.git`  
+Download sorce.　`git clone https://github.com/namuyan/NEM-testnet-Faucet.git`
 
 2. Apacheのルートフォルダ以下に*main*ファイルを作成し、  
-*distribute-file* 内の全ファイルをコピーします。
+*NEM-testnet-Faucet* 内の全ファイルをコピーします。copyできない場合は権限の違いによるものです。  
+Make *main* folder and copy all data of *NEM-testnet-Faucet* to the folder.  
+`mkdir main` and `cp -r /patt/to/NEM-testnet-Faucet/* /passs/too/main/`
 
-3. *htdocs*と権限を一致させます。`chown -R daemon:daemon htdocs`
+3. *htdocs*と権限を一致させます。`chown -R daemon:daemon htdocs`  
+Match the authority with * htdocs *. `chown -R daemon:daemon htdocs`
 
-4. *cron/.htaccess* *example/.htaccess* をローカル環境と一致させます。  
-あなたのローカルが `192.168.1.*` であるならば `allow from 192.168.3.0/24` → `allow from 192.168.1.0/24`
+
+4. *cron/.htaccess* and *example/.htaccess* をローカル環境と一致させます。これらは他人にアクセスされないように  
+あなたのローカルが `192.168.1.*` であるならば `allow from 192.168.3.0/24` → `allow from 192.168.1.0/24`  
+
 
 5. NEMの *PriKey,PubKey,Address* を入手  
 `curl http://localhost:7890/account/generate` **重要:必ず記録して誰にも見せない事**
@@ -61,6 +67,44 @@ example
 
 11. あとは適宜 index.php config.php を修正して下さい。  
 
+## Install(in English)
+1. Download sorce.　`git clone https://github.com/namuyan/NEM-testnet-Faucet.git`
+
+2. Make *main* folder and copy all data of *NEM-testnet-Faucet* to the folder.  
+`mkdir main` and `cp -r /patt/to/NEM-testnet-Faucet/* /passs/too/main/`
+
+3. Match the authority with * htdocs *. `chown -R daemon:daemon htdocs`
+
+
+4. To fit local environment *cron/.htaccess* and *example/.htaccess*. DO NOT ALLOW OTHERS TO ACCESS!   
+If your local ip is `192.168.1.12` ,set `allow from 192.168.3.0/24` → `allow from 192.168.1.12/24`
+
+
+5. Create NEM account, `curl http://localhost:7890/account/generate` **DO NOT SHOW OTHERS**
+
+6. Write the three account data (*$NEMAddress $NEMprikey $NEMpubkey*) to *config.php*.
+
+7. Create DB account **Use diffarent parameter to Example、I use same parameter of config.php as example**  
+１、Login as root　`mysql -u root -p`  
+２、Create database　`CREATE DATABASE nemdb CHARACTER SET utf8 COLLATE utf8_general_ci;`  
+３、Create user　`CREATE USER 'nember'@'localhost' IDENTIFIED BY 'obama';`  
+４、Grant the user access to the DB　`GRANT ALL PRIVILEGES ON nemdb.* TO 'nember'@'localhost';`  
+５、Logout　`exit`
+
+
+8. Create tables **After write down to config.php**  
+example  
+If makedb.php on *htdocs/main/cron/makedb.php*, access to `http://localhost/main/cron/makedb.php`  
+Check no error output.
+
+9. Run regularly by crontab.  
+１、To make a pass of *$root_dir* of *Deposit.php ImageReg.php SBMFaucet.php* in *main/cron*.  
+２、Get pass to type `pwd` at main folder.  
+３、`crontab -e`  
+４、Write down followings. (pass is original)  
+５、`*/4 * * * * /opt/lampp/bin/php /opt/lampp/htdocs/main/cron/Deposit.php >/dev/null 2>&1`  
+　　`*/5 * * * * /opt/lampp/bin/php /opt/lampp/htdocs/main/cron/ImageReg.php >/dev/null 2>&1`  
+　　`*/6 * * * * /opt/lampp/bin/php /opt/lampp/htdocs/main/cron/SBMFaucet.php >/dev/null 2>&1`  
 
 ## Usage
 `http://localhost/main/index.php`にアクセスしてみましょう。  
